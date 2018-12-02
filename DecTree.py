@@ -43,14 +43,16 @@ plt.title('ROC curve breast cancer')
 plt.show()
 
 # Create tree .dot file
-export_graphviz(tree, out_file='tree.dot', feature_names=[])
+export_graphviz(tree, out_file='tree.dot', feature_names=['mean radius', 'mean texture', 'mean perimeter', 'mean area',
+       'mean smoothness', 'mean compactness', 'mean concavity',
+       'mean concave points', 'mean symmetry', 'mean fractal dimension',
+       'radius error', 'texture error', 'perimeter error', 'area error',
+       'smoothness error', 'compactness error', 'concavity error',
+       'concave points error', 'symmetry error',
+       'fractal dimension error', 'worst radius', 'worst texture',
+       'worst perimeter', 'worst area', 'worst smoothness',
+       'worst compactness', 'worst concavity', 'worst concave points',
+       'worst symmetry', 'worst fractal dimension'])
 
 
-# X_combined = np.vstack((X_train, X_test))
-# y_combined = np.hstack((y_train, y_test))
-# plot_decision_regions(X_train, y_train, classifier=tree)
-# plt.xlabel('petal length [standardized]')
-# plt.ylabel('petal width [standardized]')
-# plt.legend(loc='upper left')
-# plt.show()
 
