@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 y_test.loc[:, 'y_predicted'] = None
 
 # Fit and make predictions
-tree = DecisionTreeClassifier(criterion='entropy', max_depth=3, random_state=0)
+tree = DecisionTreeClassifier(criterion='entropy', max_depth=4, random_state=0)
 tree.fit(X_train, y_train)
 dt_classification = tree.predict(X_test)
 y_test.loc[:, 'y_predicted'] = dt_classification
