@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 y_test.loc[:, 'y_predicted'] = None
 
 # Fit and make predictions
-rf = RandomForestClassifier(criterion='entropy', n_estimators=10, random_state=1, n_jobs=2)
+rf = RandomForestClassifier(criterion='entropy', n_estimators=5000, random_state=1, n_jobs=-1)
 rf.fit(X_train, y_train)
 rf_classification = rf.predict(X_test)
 y_test.loc[:, 'y_predicted'] = rf_classification
