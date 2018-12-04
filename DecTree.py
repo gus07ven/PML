@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 y_test.loc[:, 'y_predicted'] = None
 
 # Fit and make predictions
-tree = DecisionTreeClassifier(criterion='entropy', max_depth=4, random_state=0)
+tree = DecisionTreeClassifier(criterion='entropy', max_depth=3, random_state=0)
 tree.fit(X_train, y_train)
 dt_classification = tree.predict(X_test)
 y_test.loc[:, 'y_predicted'] = dt_classification
@@ -39,7 +39,7 @@ plt.plot(fpr, tpr, color='red', lw=2, label='ROC curve')
 plt.plot([0, 1], [0, 1], color='blue', lw=2, linestyle='--')
 plt.xlabel('FPR')
 plt.ylabel('TPR')
-plt.title('ROC curve breast cancer')
+plt.title('Decision Tree ROC curve breast cancer')
 plt.show()
 
 # Create tree .dot file
